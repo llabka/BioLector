@@ -1,2 +1,2 @@
 # BioLector
-Script for analysing data from BioLector
+Script for analysing output data from BioLector microbioreactors. 
