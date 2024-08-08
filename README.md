@@ -1,8 +1,6 @@
 # BioLector data analysis
 
-<img src="https://github.com/user-attachments/assets/cc096bc4-2b67-4081-a8b5-462e737f6857" width="200" height="100">
-
-This repository contains a script for analyzing output data from BioLector microbioreactors and a supporting package "htmf" that provides functionalities to facilitate this analysis. The BioLector is a high-throughput microbioreactor used for monitoring microbial growth and other biological processes. This tool allows for the efficient analysis and visualization of data generated from BioLector experiments.
+This repository contains a script for analyzing output data from BioLector microbioreactors and a supporting package "htmf" that provides functionalities to facilitate this analysis. The BioLector is a high-throughput microbioreactor system in microtiter plate format used for e.g. monitoring microbial growth (biomass), pH, dissolved oxygen, and fluorescence. The tool provided in this repository allows for the efficient analysis and visualization of data generated from BioLector experiments.
 
 Repository Contents
 
@@ -14,6 +12,8 @@ README.md: This file, providing an overview of the repository contents and instr
 
 Usage
 
-The output file from BioLector runs is a csv file containing all data. The script will process the data and generate an output file "Info" with the results from the run 
+The output file from BioLector runs is CSV format file containing all data. The R script will process the data in the CSV file and generate an output file "Info" with the results from the run, an output file "Growthrates" with the analysed maximum growth rate (µmax) for each strain (as listed in the design file), and an image file with plots of the growth curves for each strain. 
 
-Feel free to customize the sections, add more details, or make adjustments based on your specific needs and the actual content of your repository.
+For each experiment a .CSV file with BioLector data and a design file with updated strain and condition info is required. Feel free to customize the sections, add more details, or make adjustments based on your specific needs. 
+
+<img src="https://github.com/user-attachments/assets/cc096bc4-2b67-4081-a8b5-462e737f6857" width="200" height="100">
