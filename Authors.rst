@@ -2,4 +2,6 @@
 Credits
 =======
 
-Script and htmf package were developed by Christopher Workman. 
+The scrupt was developed by Christopher Workman. 
+
+The htmf package was developed by Christopher Workman and Laurent Gautier. 
