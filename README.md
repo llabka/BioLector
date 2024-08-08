@@ -1,4 +1,4 @@
 # BioLector
 Script for analysing output data from BioLector microbioreactors. 
 
-![BioLectorII](https://github.com/user-attachments/assets/414e05f4-3953-4d41-a695-86405f56d1a9)
+![BioLectorII](https://github.com/user-attachments/assets/414e05f4-3953-4d41-a695-86405f56d1a9/w_300)
