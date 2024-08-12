@@ -20,6 +20,6 @@ For each experiment a .CSV file with BioLector data and a design file with updat
 The Growth rate (µmax) is estimated by first log-transforming the growth data, fitting a smoothing spline, and then using linear regression on selected growth phases based on the derivative (rate of change) of the log-transformed data. The slope og the regression line within each growth phase gives the growth rate. Overall, this method is robust for identifying periods of exponential growth and estimating the corresponding rates, even in noisy or complex growth data. For statistical confidence and goodness-of-fit info for the regression, the p-value and R-squared values are provided. Always ensure the calculated growth rates make biological sense by inspecting plotted data. 
 
 ***Data:***
-This repository was created in conjunction with out recent publication, where the data provided in the "data" folder was analyzed using the included script. The same analysis can be reproduced with this script, as detailed in the publication. For more information, refer to: DOI:XXXX. 
+This repository was created in conjunction with our recent publication, where the data provided in the "data" folder was analyzed using the included script. The same analysis can be reproduced with this script, as detailed in the publication. For more information, refer to: DOI:XXXX. 
 
 <img src="https://github.com/user-attachments/assets/cc096bc4-2b67-4081-a8b5-462e737f6857" width="200" height="100">
