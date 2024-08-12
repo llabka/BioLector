@@ -1,6 +1,6 @@
 # BioLector data analysis
 
-This repository contains a script for analyzing output data from BioLector microbioreactors and a supporting package "htmf" that provides functions to facilitate this analysis (reading, normalizing, plotting, and extracting features from growth profiles). The BioLector is a high-throughput microbioreactor system in microtiter plate format used for monitoring e.g. microbial growth (biomass), pH, dissolved oxygen, and fluorescence. The tool provided in this repository allows for the efficient analysis and visualization of data generated from BioLector experiments including calcualtion of growth rate in exponential phase.
+This repository contains a script for analyzing output data from BioLector microbioreactors and a supporting package "htmf" that provides functions to facilitate this analysis (reading, normalizing, plotting, and extracting features from growth profiles). The BioLector is a high-throughput microbioreactor system in microtiter plate format used for monitoring e.g. microbial growth (biomass), pH, dissolved oxygen, and fluorescence. The tool provided in this repository allows for the efficient analysis and visualization of data generated from BioLector experiments including calculation of the growth rate in exponential phase.
 
 **Repository Contents**
 
