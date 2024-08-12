@@ -12,7 +12,7 @@ This repository contains a script for analyzing output data from BioLector micro
 
 **Usage**
 
-The output file from BioLector runs is CSV format file containing all data. By running the R script, it will process the data in the CSV file and generate an output file "Info" with the results from the run, an output file "Growthrates" with the analysed maximum growth rate (µmax) for each strain (as listed in the design file), and an image file with plots of the growth curves for each strain. 
+The output file from BioLector runs is CSV format file containing all data. By running the R script, it will process the data in the .CSV file and generate an output file "Info" with the results from the run, an output file "Growthrates" with the analysed maximum growth rate (µmax) for each strain (as listed in the design file), and an image file with plots of the growth curves for each strain. 
 
 For each experiment a .CSV file with BioLector data and a design file with updated strain and condition info is required as input. Feel free to customize the sections, add more details, or make adjustments based on your specific needs. 
 
