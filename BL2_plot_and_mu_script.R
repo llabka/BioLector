@@ -217,14 +217,28 @@ for (i in strain_vec) {
   
 }
 
-## Data visualisation
 write.table(file=outfile2, growth_rate_tib, quote=FALSE, sep="\t", row.names=FALSE, dec=",")
+
+#Find max biomass
+max <- aggregate(measure ~ well, data = growth_data, FUN = max)
+#include condition column
+max$group <- format(growth_data$Condition[match(max$well, growth_data$well)], na.rm = TRUE)
+
+mean_max <- function(x) c(Mean = mean(x), SD = sd(x))
+  do.call(data.frame, aggregate(measure ~ group, max, mean_max))
+
+# Perform t-test. Numeric value is the first argument, in our case conc, "~" means "by" and then dis-aggregating by GS115. "%>%" means "And then". 
+stat.test <- max %>% t_test(measure ~ group, ref.group = "WT  ")
+stat.test
+
+write.table(stat.test, "stats.txt")
+
+## Data visualisation
 
 ggplot(data = growth_data, mapping = aes(x = time, y = measure)) + 
   geom_point(mapping = aes(color = Condition)) + 
   facet_wrap(~Strain)
   
 ggsave("growth_data.pdf")
-
 
 
