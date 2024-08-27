@@ -1,0 +1,202 @@
+\documentclass[a4paper,twoside]{article}
+
+% \VignetteIndexEntry{The htmf Package}
+% \VignetteDepends{htmf}
+
+\usepackage{fullpage}
+
+\newcommand{\pkg}{\textbf}
+
+\title{Overview of the \pkg{htmf} Package}
+\author{Laurent Gautier <laurent@cbs.dtu.dk>\\
+        <add your name here when adding content>}
+
+\SweaveOpts{keep.source=TRUE}
+
+\begin{document}
+
+\maketitle
+
+\section{Introduction}
+
+
+<<>>=
+library(htmf)
+@
+
+The package \pkg{htmf} relies on other R packages:
+<<echo=FALSE>>=
+packageDescription("htmf")$Depends
+@
+Those must be available, or an error will occur when trying to attach \pkg{htmf}
+
+
+\section{Reading data}
+
+\subsection{Biolector}
+
+The {\it biolector} system is recording the measurments in a CSV file.
+
+The function \verb+read_biolector+ can be passed a filename or a connection
+and read the file's content into a \verb+PlateRun+ data structure.
+
+Here we use a {\it gzipped} connection:
+<<>>=
+fn <- system.file("exampleData", "biolector_data.csv.gz", package="htmf")
+# Create a gzip connection
+gzf <- gzfile(fn)
+
+pr <- read_biolector(gzf)
+
+close(gzf)
+@
+
+
+\section{Plotting data}
+
+\subsection{Default plots}
+<<>>=
+# plot_biolector 
+@
+
+\subsection{Custom plots}
+
+<<fig=TRUE>>=
+dataf_biomass <- melt(measure(pr$Biomass))
+names(dataf_biomass)[ncol(dataf_biomass)] <- "biomass"
+
+p <- ggplot(dataf_biomass) +
+     aes(x = cycle, y = biomass) +
+     geom_line(aes(group = well), alpha = 0.3)
+print(p)
+
+@
+
+<<fig=TRUE>>=
+p <- ggplot(subset(dataf_biomass, well %in% c("A01","B01","C01"))) +
+     aes(x = cycle, y = biomass, col = factor(well)) +
+     geom_smooth(aes(group = well), alpha = 0.3)
+print(p)
+
+@
+
+
+\section{Computing on the data}
+
+\subsection{Adjusting the data}
+
+
+\subsection{Fitting curves}
+
+As observed in earlier plots of the biomass data, a logistic curve seems to be able to represent
+our data. In an surprising move for fitting dose-respone or growth data, we choose the four-parameter logistic curve.
+
+\[\mathnormal{response} = \mathnormal{f}(\mathnormal{input}) = A + \frac{ B - A }{ 1 + \exp(\frac{\mathnormal{xmid}-\mathnormal{input}}{\mathnormal{scal}})}\]
+
+with
+\begin{description}
+\item[A: ] lower asymptote
+\item[B: ] higher asymptote
+\item[xmid: ] point of inflection
+\item[scal: ] scale parameter
+\end{description}
+That function can be defined in R:
+<<>>=
+fpl <- function(A, B, xmid, scal, x) A+(B-A)/(1+exp((xmid-x)/scal))
+@
+
+The first order derivative can be used to compute the slope at the inflection point:
+\[\frac{d}{dx} f = \frac{B - A}{\mathnormal{scal} (1+\exp(\frac{m-\mathnormal{x}}{\mathnormal{scal}}))^2} \]
+
+<<echo=FALSE>>=
+fpl_deriv <- function(A, B, xmid, scal, x) {(B-A) / (scal * (1 + exp((xmid-x)/scal))**2)}
+@
+
+
+
+The package \pkg{nlme} is used for the fitting, and to demonstrate how to do it only one growth curve is worked on.
+<<>>=
+library(nlme)
+dataf_wells <- split(dataf_biomass, dataf_biomass$well)
+
+params <- getInitial(biomass ~ SSfpl(cycle, 110, 0, 0, 0), 
+                     data=dataf_wells[[1]])
+params
+
+A <- params[1]; B <- params[2]
+xmid <- params[3]; scal <- params[4]
+fit <- nls(biomass ~ SSfpl(cycle, A, B, xmid, scal), 
+           alg="plinear", data=dataf_wells[[1]])
+
+fit
+@
+
+
+The estimated parameters can be related to physical or biological representations with
+\begin{description}
+  \item[A:] amount of cells inoculated
+  \item[B:] amount of cells at the end of the fermentation
+  \item[slope at the inflection point:] maximum growth
+\end{description}
+as shown on the figure below.
+
+<<echo=FALSE, fig=TRUE>>=
+
+dataf_wells[[1]]$fitted <- fpl(coef(fit)[1], coef(fit)[2], coef(fit)[3], coef(fit)[4],
+                               dataf_wells[[1]]$cycle)
+
+inflex_slope = fpl_deriv(coef(fit)[1], coef(fit)[2], coef(fit)[3], coef(fit)[4], coef(fit)[3])
+
+p <- ggplot(dataf_wells[[1]]) +
+     geom_line(aes(x = cycle, y = fitted), col="blue") +
+     geom_abline(intercept = coef(fit)[1], slope = 0, linetype = 2, col = "blue") +
+     geom_abline(intercept = coef(fit)[2], slope = 0, linetype = 2, col = "blue") +
+     geom_abline(slope = inflex_slope,
+                 intercept = fpl(coef(fit)[1], coef(fit)[2], coef(fit)[3], coef(fit)[4], coef(fit)[3]) - (inflex_slope * coef(fit)[3]),
+		 linetype = 2, col = "blue") +
+     geom_line(aes(x = cycle, y = biomass))
+print(p)
+
+@
+
+% guts feeling that it is wrong (done in a rush with very rusty derivation skills) -LG
+<<echo=FALSE>>=
+fpl_deriv2 <- function(A, B, xmid, scal, x) {2 * (B-A) / (scal**2 * (1 + exp((xmid-x)/scal))**3)}
+@
+
+
+
+This process can be automated, and parameters of growth fitted without the user's assistance.
+
+<<fig=TRUE, width=12, height=13>>=
+for (i in 1:20) {
+
+  params <- tryCatch(getInitial(biomass ~ SSfpl(cycle, 110, 0, 0, 0), 
+                                data=dataf_wells[[i]]),
+                     error = function(e) NULL)
+  if (is.null(params)) {
+    dataf_wells[[i]]$fitted <- rep(NA, length = nrow(dataf_wells[[i]]))
+  } else {
+    A <- params[1]; B <- params[2]
+    xmid <- params[3]; scal <- params[4]
+    fit <- nls(biomass ~ SSfpl(cycle, A, B, xmid, scal), alg="plinear", 
+               data=dataf_wells[[i]])
+
+    tmp <- coef(fit)
+    dataf_wells[[i]]$fitted <- fpl(tmp[1], tmp[2], tmp[3], tmp[4], 
+                                   dataf_wells[[i]]$cycle)
+  }
+}
+dataf_ten <- do.call("rbind", dataf_wells[1:20])
+
+p <- ggplot(dataf_ten) +
+     geom_line(aes(x = cycle, y = biomass), col="black") +
+     geom_line(aes(x = cycle, y = fitted), col="blue", linetype = 2) +
+     facet_wrap( ~ well)
+print(p)
+
+@
+
+
+\end{document}
+

@@ -1,0 +1,57 @@
+import(methods)
+
+importClassesFrom("Biobase",
+                  "container")
+
+exportClasses(
+  "PlateChannel",
+  "PlateRun"
+)
+
+exportMethods(
+  "channels", "channels<-",
+  "time", "time<-",
+  "measure", "measure<-",
+  "info",
+  "cData", "cData<-"
+)
+
+export(
+  "read_biolector",
+  "read_biolector2",
+  "read_df",
+  "read_df2",
+  "plot_biolector",
+  "plot_helper",
+  "plotBioLector",
+  "plateRun2df",
+  "df2plateRun",
+  "derived_channel",
+  "sliceByTimeIntervals",
+  "plate_calibrate",
+  "plate_interpolate",
+  "plate_intervals",
+  "plate_regressions",
+  "plate_normalize",
+  "plate_halign",
+  "plate_valign",
+  "plate_compensation",
+  "plate_correct_baseline",
+  "plate_correct_outliers",
+  "channel_halign",
+  "channel_compensation",
+  "channel_correct_baseline",
+  "channel_correct_outliers",
+  "channel_error_by_well",
+  "channel_interpolate",
+  "channel_regressions"
+)
+
+## Deprecated
+#  "channel_baseline_intervals",
+#  "plate_baseline_intervals",
+
+# Not public (?)
+#  "buildColors.R",
+#  "getYOffsets",
+#  extractMatrix

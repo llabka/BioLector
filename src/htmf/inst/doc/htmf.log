@@ -1,0 +1,254 @@
+This is pdfTeX, Version 3.1415926-2.4-1.40.13 (TeX Live 2012) (format=pdflatex 2013.3.11)  11 MAR 2013 22:37
+entering extended mode
+ restricted \write18 enabled.
+ %&-line parsing enabled.
+**htmf.tex
+(./htmf.tex
+LaTeX2e <2011/06/27>
+Babel <v3.8m> and hyphenation patterns for english, dumylang, nohyphenation, ge
+rman-x-2012-05-30, ngerman-x-2012-05-30, afrikaans, ancientgreek, ibycus, arabi
+c, armenian, basque, bulgarian, catalan, pinyin, coptic, croatian, czech, danis
+h, dutch, ukenglish, usenglishmax, esperanto, estonian, ethiopic, farsi, finnis
+h, french, friulan, galician, german, ngerman, swissgerman, monogreek, greek, h
+ungarian, icelandic, assamese, bengali, gujarati, hindi, kannada, malayalam, ma
+rathi, oriya, panjabi, tamil, telugu, indonesian, interlingua, irish, italian, 
+kurmanji, latin, latvian, lithuanian, mongolian, mongolianlmc, bokmal, nynorsk,
+ polish, portuguese, romanian, romansh, russian, sanskrit, serbian, serbianc, s
+lovak, slovenian, spanish, swedish, turkish, turkmen, ukrainian, uppersorbian, 
+welsh, loaded.
+(/usr/local/texlive/2012/texmf-dist/tex/latex/base/article.cls
+Document Class: article 2007/10/19 v1.4h Standard LaTeX document class
+(/usr/local/texlive/2012/texmf-dist/tex/latex/base/size10.clo
+File: size10.clo 2007/10/19 v1.4h Standard LaTeX file (size option)
+)
+\c@part=\count79
+\c@section=\count80
+\c@subsection=\count81
+\c@subsubsection=\count82
+\c@paragraph=\count83
+\c@subparagraph=\count84
+\c@figure=\count85
+\c@table=\count86
+\abovecaptionskip=\skip41
+\belowcaptionskip=\skip42
+\bibindent=\dimen102
+)
+(/usr/local/texlive/2012/texmf-dist/tex/latex/preprint/fullpage.sty
+Package: fullpage 1999/02/23 1.1 (PWD)
+\FP@margin=\skip43
+)
+
+! LaTeX Error: File `Sweave.sty' not found.
+
+Type X to quit or <RETURN> to proceed,
+or enter new name. (Default extension: sty)
+
+Enter file name: 
+No file htmf.aux.
+\openout1 = `htmf.aux'.
+
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 17.
+LaTeX Font Info:    ... okay on input line 17.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 17.
+LaTeX Font Info:    ... okay on input line 17.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 17.
+LaTeX Font Info:    ... okay on input line 17.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 17.
+LaTeX Font Info:    ... okay on input line 17.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 17.
+LaTeX Font Info:    ... okay on input line 17.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 17.
+LaTeX Font Info:    ... okay on input line 17.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <12> on input line 19.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <8> on input line 19.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <6> on input line 19.
+
+! LaTeX Error: Environment Schunk undefined.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.24 \begin{Schunk}
+                   
+? 
+
+! LaTeX Error: Environment Sinput undefined.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.25 \begin{Sinput}
+                   
+? 
+
+! LaTeX Error: \begin{document} ended by \end{Sinput}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.27 \end{Sinput}
+                 
+? 
+
+! LaTeX Error: \begin{document} ended by \end{Schunk}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.28 \end{Schunk}
+                 
+? 
+
+! LaTeX Error: Environment Schunk undefined.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.31 \begin{Schunk}
+                   
+? 
+
+! LaTeX Error: Environment Soutput undefined.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.32 \begin{Soutput}
+                    
+? 
+
+! LaTeX Error: \begin{document} ended by \end{Soutput}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.34 \end{Soutput}
+                  
+? 
+
+! LaTeX Error: \begin{document} ended by \end{Schunk}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.35 \end{Schunk}
+                 
+? 
+
+! LaTeX Error: Environment Schunk undefined.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.49 \begin{Schunk}
+                   
+? 
+
+! LaTeX Error: Environment Sinput undefined.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.50 \begin{Sinput}
+                   
+? 
+! Missing $ inserted.
+<inserted text> 
+                $
+l.51 ... <- system.file("exampleData", "biolector_
+                                                  data.csv.gz", package="htmf")
+
+? 
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <7> on input line 51.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <5> on input line 51.
+! You can't use `macro parameter character #' in math mode.
+l.52 > #
+         Create a gzip connection
+? 
+
+! LaTeX Error: \begin{document} ended by \end{Sinput}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.56 \end{Sinput}
+                 
+? 
+! Missing $ inserted.
+<inserted text> 
+                $
+l.56 \end{Sinput}
+                 
+? 
+
+! LaTeX Error: \begin{document} ended by \end{Schunk}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.57 \end{Schunk}
+                 
+? 
+
+Overfull \hbox (10.41519pt too wide) in paragraph at lines 48--58
+[]\OT1/cmr/m/n/10 Here we use a \OT1/cmr/m/it/10 gzipped \OT1/cmr/m/n/10 con-ne
+c-tion:   > fn <- sys-tem.file("exampleData", "biolector$[]\OML/cmm/m/it/10 ata
+:csv:gz\OT1/cmr/m/n/10 "\OML/cmm/m/it/10 ; package \OT1/cmr/m/n/10 =
+ []
+
+
+! LaTeX Error: Environment Schunk undefined.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.63 \begin{Schunk}
+                   
+? 
+
+! LaTeX Error: Environment Sinput undefined.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.64 \begin{Sinput}
+                   
+? 
+! Emergency stop.
+ ...                                              
+                                                  
+l.64 \begin{Sinput}
+                   
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+ 
+Here is how much of TeX's memory you used:
+ 263 strings out of 493488
+ 3091 string characters out of 3141326
+ 51432 words of memory out of 3000000
+ 3642 multiletter control sequences out of 15000+200000
+ 8716 words of font info for 31 fonts, out of 3000000 for 9000
+ 957 hyphenation exceptions out of 8191
+ 23i,6n,19p,135b,199s stack positions out of 5000i,500n,10000p,200000b,50000s
+!  ==> Fatal error occurred, no output PDF file produced!

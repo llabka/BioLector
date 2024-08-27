@@ -1,0 +1,30 @@
+Package: htmf
+Type: Package
+Title: Analysis of highly-parallel microfermentation assays at the well
+        level
+Version: 0.5.1
+Date: 2019-10-28
+Author: Christopher Workman, Laurent Gautier 
+Maintainer: Christopher Workman <cwor@dtu.dk>
+Description: Analysis of highly-parallel microfermentation assays at the well level 
+License: What license is it under?
+Requires: R(>=2.9)
+Depends: reshape, ggplot2, Biobase, methods, stats
+Imports: Biobase
+Suggests:
+Collate: platechannel.R read_biolector.R read_biolector2.R
+        read_biolector1.R read_biolector3.R read_df.R read_df2.R
+        plot_biolector.R plot_helper.R getYOffsets.R plate_intervals.R
+        sliceByTimeIntervals.R buildColors.R channel_interpolate.R
+        plate_interpolate.R channel_regressions.R plate_regressions.R
+        channel_compensation.R plate_compensation.R channel_valign.R
+        plate_valign.R channel_halign.R plate_halign.R
+        channel_error_by_well.R plotBioLector.R
+        plate_baseline_intervals.R channel_baseline_intervals.R
+        plate_correct_outliers.R channel_correct_outliers.R
+        plate_correct_baseline.R channel_correct_baseline.R
+        plateRun2df.R df2plateRun.R derived_channel.R plate_normalize.R
+        plate_calibrate.R
+LazyLoad: yes
+NeedsCompilation: no
+Packaged: 2019-10-28 19:09:57 UTC; cwor
