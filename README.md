@@ -4,8 +4,7 @@ This repository contains a script for analyzing output data from BioLector micro
 
 **Repository Contents**
 
-- BL2_plot_and_mu_script.R: Is the R script for analyzing BioLector data.
-- htmf_0.5.1.tar.gz: zip file with the supporting package providing functions necessary for data analysis.
+- src/: Source folder containing BL2_plot_and_mu_script.R (the R script for analyzing BioLector data) and the supporting package, htmf, providing functions necessary for data analysis.
 - data/: Folder containing example data files used for demonstration and testing purposes.
 - design_file.txt: design file is a table with information on each well required to run the script
 - README.md: This file, providing an overview of the repository contents and instructions for usage.
@@ -20,6 +19,6 @@ For each experiment a .CSV file with BioLector data and a design file with updat
 The Growth rate (µmax) is estimated by first log-transforming the growth data, fitting a smoothing spline, and then using linear regression on selected growth phases based on the derivative (rate of change) of the log-transformed data. The slope og the regression line within each growth phase gives the growth rate. Overall, this method is robust for identifying periods of exponential growth and estimating the corresponding rates, even in noisy or complex growth data. For statistical confidence and goodness-of-fit info for the regression, the p-value and R-squared values are provided. Always ensure the calculated growth rates make biological sense by inspecting plotted data. 
 
 ***Data:***
-This repository was created in conjunction with our recent publication, where the data provided in the "data" folder was analyzed using the included script. The same analysis can be reproduced with this script, as detailed in the publication. For more information, refer to: DOI:XXXX. 
+This repository was created in conjunction with our recent publication, where the data provided in the "data" folder was analyzed using the included script. The same analysis can be reproduced with this script, as detailed in the publication. For more information see "Characterizing heterologous protein burden in Komagataella phaffii". 
 
 <img src="https://github.com/user-attachments/assets/cc096bc4-2b67-4081-a8b5-462e737f6857" width="200" height="100">
