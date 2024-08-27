@@ -37,7 +37,7 @@ library(parallel)
   #BiocManager::install()
 
 #And htmf custom package made by Chris Workman
-#install.packages("~/Dropbox/phD/BL2_script/htmf_0.5.1.tar.gz", repos = NULL, type="source")
+#install.packages("htmf_0.5.1.tar.gz", repos = NULL, type="source")
 #After installation, load "htmf" in the library section
 
 
