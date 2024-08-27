@@ -5,7 +5,7 @@ This repository contains a script for analyzing output data from BioLector micro
 **Repository Contents**
 
 - src/: Source folder containing BL2_plot_and_mu_script.R (the R script for analyzing BioLector data) and the supporting package, htmf, providing functions necessary for data analysis.
-- data/: Folder containing example data files used for demonstration and testing purposes.
+- Data/: Folder containing example data files used for demonstration and testing purposes.
 - design_file.txt: design file is a table with information on each well required to run the script
 - README.md: This file, providing an overview of the repository contents and instructions for usage.
 
