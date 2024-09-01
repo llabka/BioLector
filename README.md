@@ -20,5 +20,6 @@ The Growth rate (µmax) is estimated by first log-transforming the growth data, 
 
 ***Data:***
 This repository was created in conjunction with our recent publication, where the data provided in the "data" folder was analyzed using the included script. The same analysis can be reproduced with this script, as detailed in the publication. For more information see "Characterizing heterologous protein burden in Komagataella phaffii". 
+DOI: 10.5281/zenodo.13625781
 
 <img src="https://github.com/user-attachments/assets/cc096bc4-2b67-4081-a8b5-462e737f6857" width="200" height="100">
